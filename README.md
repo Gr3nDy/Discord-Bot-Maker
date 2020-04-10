@@ -3,8 +3,6 @@ Here's the place for me [GrenDy](https://github.com/Gr3nDy) to keep track on all
 
 # <h2> Raw Data </h2>
 You can find the list of <b>Raw Data</b> that i've created <br> 
-[[Click Here]]()
+[[Click Here]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/README.md)
 
-# <h2> Bots </h2>
-These are the list of my public <b>Discord Bots</b> <br>
-[[Click Here]]()
+
