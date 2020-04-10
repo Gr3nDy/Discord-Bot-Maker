@@ -1,8 +1,6 @@
 
 # Announce
 
-[Announce](https://raw.githubusercontent.com/Gr3nDy/DBM-RawData/master/Commands/announce/announce.json)
-<br>
 This Command allows you to make an announcement
 
 **Usage:**
