@@ -1,4 +1,5 @@
 # Raw Data
+⚠️<b>Make sure you've installed <em>betamods</em> on your DBM</b>⚠️ 
 
 # <h3> Embed Builder </h3>
 This command allows you create embed inside discord from a json format <br>
