@@ -61,4 +61,4 @@ chars
 `gift` msg started from **Action #257 (Create Embed Message)**
 
 
-[Back To TokenMe Page](help.md)
+[Back To TokenMe Page](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/README.md)
