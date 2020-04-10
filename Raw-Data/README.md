@@ -20,5 +20,5 @@ This Command allows you to see a user's information <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/userinfo/README.md)
 
 # <h3> Purge </h3>
-A Simple Purge messages command
+A Simple Purge messages command <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/purge/README.md)
