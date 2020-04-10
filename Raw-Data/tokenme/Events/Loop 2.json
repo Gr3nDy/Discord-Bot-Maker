@@ -1,0 +1,316 @@
+{
+  "name": "[TokenMe] Loop 2",
+  "temp": "",
+  "event-type": "0",
+  "_id": "HfPiC",
+  "actions": [
+    {
+      "filename": "./resources/token/${tempVars(\"file-token\")}",
+      "storage": "1",
+      "varName2": "new-file",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "Date.now();",
+      "storage": "1",
+      "varName": "current-time",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.expires",
+      "storage": "1",
+      "varName": "expires",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "storage": "1",
+      "varName": "current-time",
+      "comparison": "14",
+      "value": "tempVars(\"expires\")",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "37",
+      "name": "Check Variable"
+    },
+    {
+      "description": "jump to looping",
+      "jump_to_anchor": "looping",
+      "color": "#8080c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "comment": "↓ SET LOGS CHANNEL ↓",
+      "color": "#ffff00",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "LOGS CHANNEL ID",
+      "storage": "1",
+      "varName": "logs",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "-",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.datatype",
+      "storage": "1",
+      "varName": "datatype",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.value",
+      "storage": "1",
+      "varName": "value",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.duration",
+      "storage": "1",
+      "varName": "duration",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.tokencreator",
+      "storage": "1",
+      "varName": "tokencreator",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.expiredate",
+      "storage": "1",
+      "varName": "expiredate",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.expiretime",
+      "storage": "1",
+      "varName": "expiretime",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.giftedto",
+      "storage": "1",
+      "varName": "giftedto",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "comment": "-",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "new-file",
+      "path": "$.tokencreator",
+      "storage": "1",
+      "varName": "tokencreator",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"tokencreator\")}",
+      "storage": "1",
+      "varName": "token-creator",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "token-creator",
+      "info": "0",
+      "storage": "1",
+      "varName2": "token-creator(object)",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "token-creator",
+      "info": "12",
+      "storage": "1",
+      "varName2": "token-creator(avatar)",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "token-creator",
+      "info": "2",
+      "storage": "1",
+      "varName2": "token-creator(username)",
+      "name": "Store Member Info"
+    },
+    {
+      "comment": "--",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "text": "${tempVars(\"file-token\")}",
+      "text2": ".json",
+      "text3": "",
+      "info": "1",
+      "storage": "1",
+      "varName": "file-token2",
+      "name": "Replace Text"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"file-token2\")}",
+      "filepath": "./resources/token/",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "comment": "-",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "title": "Token Expired",
+      "author": "${tempVars(\"token-creator(username)\")}",
+      "color": "#3269a8",
+      "url": "",
+      "authorIcon": "${tempVars(\"token-creator(avatar)\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-log",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-log",
+      "fieldName": "Token",
+      "message": "||${tempVars(\"file-token2\")}||",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-log",
+      "fieldName": "Duration",
+      "message": "${tempVars(\"duration\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-log",
+      "fieldName": "Token Creator",
+      "message": "${tempVars(\"token-creator(object)\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-log",
+      "fieldName": "Expired Date",
+      "message": "${tempVars(\"expiretime\")}\n${tempVars(\"expiredate\")} ",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "giftedto",
+      "comparison": "1",
+      "value": "\"none\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-log",
+      "fieldName": "Gifted To",
+      "message": "`None`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "count": "3",
+      "name": "Skip Actions"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"giftedto\")}",
+      "storage": "1",
+      "varName": "giftedto-mem",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "giftedto-mem",
+      "info": "0",
+      "storage": "1",
+      "varName2": "giftedto-mem(obj)",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-log",
+      "fieldName": "Gifted To",
+      "message": "${tempVars(\"giftedto-mem(obj)\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-log",
+      "channel": "5",
+      "varName2": "logs",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "anchor_id": "looping",
+      "color": "#8080c0",
+      "description": "looping",
+      "name": "Create Anchor"
+    },
+    {
+      "comment": "",
+      "color": "#ff0000",
+      "name": "Comment"
+    }
+  ]
+}

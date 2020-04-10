@@ -1,0 +1,22 @@
+{
+  "name": "[TokenMe] Loop 1",
+  "temp": "5",
+  "event-type": "3",
+  "_id": "ICKgj",
+  "actions": [
+    {
+      "filename": "./resources/token/",
+      "storage": "1",
+      "varName2": "token-loop",
+      "name": "Loop through Folder"
+    },
+    {
+      "source": "HfPiC",
+      "list": "7",
+      "varName": "token-loop",
+      "tempVarName": "file-token",
+      "type": "true",
+      "name": "Loop Through List"
+    }
+  ]
+}

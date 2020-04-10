@@ -1,0 +1,506 @@
+{
+  "name": "redeem",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "NrnKe",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You don't have permission to do that!\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "↓ LOG CHANNEL ↓",
+      "color": "#80ff00",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "LOG CHANNEL ID",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "↓ LOG SET (true/false) ↓",
+      "color": "#80ff00",
+      "name": "Comment"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "true",
+      "storage": "1",
+      "varName": "logs-set",
+      "name": "Run Script"
+    },
+    {
+      "comment": "Command:",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "4",
+      "iffalse": "3",
+      "iffalseVal": "7",
+      "name": "Check Parameters"
+    },
+    {
+      "title": "TokenMe",
+      "author": "",
+      "color": "RED",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "https://raw.githubusercontent.com/Gr3nDy/DBM-RawData/master/Package/tokenme/Screenshot/icon.png",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg0",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "message": "Redeem Token by using\n`redeem <token>`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "param",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "param",
+      "comparison": "6",
+      "value": "(help)",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "10",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "HELP",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "title": "TokenMe",
+      "author": "",
+      "color": "RED",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg0",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "message": "**Token** Is a randomized characters\n`redeem <token>`\n\n_Example:_ `redeem Yde21Xit`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "REDEEM",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "filename": "./resources/token/${tempVars(\"param\")}.json",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check if File Exists"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Token is not Exist/Expired\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "filename": "./resources/token/${tempVars(\"param\")}.json",
+      "storage": "1",
+      "varName2": "token-json",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "token-json",
+      "path": "$.token",
+      "storage": "1",
+      "varName": "tokenjson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "/(${tempVars(\"tokenjson\")})/",
+      "storage": "1",
+      "varName": "token-pass",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "param",
+      "comparison": "12",
+      "value": "tempVars(\"token-pass\")",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Token is not Exist/Expired\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "token-json",
+      "path": "$.expires",
+      "storage": "1",
+      "varName": "expirejson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "${Date.now()}\n",
+      "storage": "1",
+      "varName": "current-time",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "current-time",
+      "comparison": "4",
+      "value": "tempVars(\"expirejson\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"This token is already expired!\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "token-json",
+      "path": "$.datatype",
+      "storage": "1",
+      "varName": "datatypejson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "token-json",
+      "path": "$.value",
+      "storage": "1",
+      "varName": "valuejson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "token-json",
+      "path": "$.tokencreator",
+      "storage": "1",
+      "varName": "tokencreator",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"datatypejson\")}",
+      "changeType": "1",
+      "value": "+tempVars(\"valuejson\")",
+      "name": "Control Member Data"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "#1fff80",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "redeemed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "redeemed",
+      "message": "${member} **Token** Succesfully Redeemed\nYou gets **${tempVars(\"valuejson\")}** `${tempVars(\"datatypejson\")}`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "redeemed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"param\")}",
+      "filepath": "./resources/token/",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "storage": "1",
+      "varName": "logs-set",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "comment": "logs msg if (true)",
+      "color": "#ff0080",
+      "name": "Comment"
+    },
+    {
+      "title": "Token Redeemed",
+      "author": "${msg.author.username}",
+      "color": "#2b70e0",
+      "url": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "logs-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "logs-embed",
+      "message": "Token Claimed by <@${msg.author.id}>\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "logs-embed",
+      "fieldName": "Token",
+      "message": "${tempVars(\"param\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "logs-embed",
+      "fieldName": "Data Type",
+      "message": "${tempVars(\"datatypejson\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "logs-embed",
+      "fieldName": "Value",
+      "message": "${tempVars(\"valuejson\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "logs-embed",
+      "fieldName": "Token Creator",
+      "message": "<@${tempVars(\"tokencreator\")}>",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "logs-embed",
+      "channel": "5",
+      "varName2": "log-channel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "30",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "comment": "TokenMe | release 1.1.2 | GrenDy",
+      "color": "#0080ff",
+      "name": "Comment"
+    }
+  ],
+  "comType": "0"
+}

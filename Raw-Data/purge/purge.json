@@ -1,0 +1,795 @@
+{
+  "name": "purge",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "comment": "↓ PERMISSION ↓",
+      "color": "#ffff00",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "iftrue": "3",
+      "iftrueVal": "6",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You don't have permission to do that!\"}});\n",
+      "storage": "1",
+      "varName": "invalid-permission",
+      "name": "Run Script"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid-permission",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Parameters"
+    },
+    {
+      "anchor_id": "help",
+      "color": "#ff80c0",
+      "description": "HELP",
+      "name": "Create Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,title:\"Purge\",description:\"`purge <value>` | Delete messages \\n`purge <user> <value>` | Delete user's messages \\n`purge links <range>` | Delete links on range \\n`purge invites <range>` | Delete invites on range \\n`purge images <range>` | Delete images on range\"}});\n",
+      "storage": "1",
+      "varName": "invalid-permission",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "type",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(link|links)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "description": "Jump To PURGE LINK",
+      "jump_to_anchor": "link",
+      "color": "#0080c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(invite|invites)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "description": "Jump To PURGE INVITE",
+      "jump_to_anchor": "invite",
+      "color": "#0080c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(image|images)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "description": "Jump To PURGE IMAGE",
+      "jump_to_anchor": "image",
+      "color": "#0080c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(help|helps)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "description": "Jump To HELP",
+      "jump_to_anchor": "help",
+      "color": "#ff80c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "comment": "PURGE VALUE",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "13",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number-purge",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "number-purge",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "number-purge",
+      "comparison": "3",
+      "value": "51",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Limit 50 Messages\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "limit",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "message-id",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "count": "${tempVars(\"number-purge\")}",
+      "option": "1",
+      "msgid": "${tempVars(\"message-id\")}",
+      "Con0": "",
+      "Con1": "",
+      "Con2": "0",
+      "Con3": "",
+      "Con4": "",
+      "Con5": "0",
+      "name": "Delete Bulk Messages MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "PURGE MENTIONED VALUE",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "purgeUser",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "11",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "purgeValue",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeValue",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeValue",
+      "comparison": "3",
+      "value": "51",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Limit 50 Messages\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "limit",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "var usr = tempVars(\"purgeUser\");\nvar amt = tempVars(\"purgeValue\");\nmsg.channel.fetchMessages({limit: 100})\n    .then ((messages) => {\n        var filterUser = usr.id;\n        var filtered = messages.filter(m => m.author.id === filterUser).array().slice(0, amt);      \n        msg.channel.bulkDelete(filtered).then(messages => console.log(`deleted ${messages.size} messages`)).catch(console.error);        \n    }).catch(console.error); ",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "PURGE FINDUSER VALUE",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "findUser",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"findUser\")}",
+      "storage": "1",
+      "varName": "purgeUser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeUser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"findUser\")}",
+      "storage": "1",
+      "varName": "purgeUser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeUser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"findUser\")}",
+      "storage": "1",
+      "varName": "purgeUser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeUser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "7",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "2",
+      "find": "${tempVars(\"findUser\")}",
+      "storage": "1",
+      "varName": "purgeUser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeUser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"${member} `${tempVars(\"findUser\")}` | **User** not found!\"}});\n",
+      "storage": "1",
+      "varName": "invalid-user",
+      "name": "Run Script"
+    },
+    {
+      "storage": "0",
+      "varName": "invalid-user",
+      "name": "Delete Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid-user",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "purgeValue",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeValue",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeValue",
+      "comparison": "3",
+      "value": "51",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Limit 50 Messages\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "limit",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "var usr = tempVars(\"purgeUser\");\nvar amt = tempVars(\"purgeValue\");\nmsg.channel.fetchMessages({limit: 100})\n    .then ((messages) => {\n        var filterUser = usr.id;\n        var filtered = messages.filter(m => m.author.id === filterUser).array().slice(0, amt);      \n        msg.channel.bulkDelete(filtered).then(messages => console.log(`deleted ${messages.size} messages`)).catch(console.error);        \n    }).catch(console.error); ",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "link",
+      "color": "#0080c0",
+      "description": "PURGE LINK",
+      "name": "Create Anchor"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Usage `purge links <range>`\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "purgeValue",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeValue",
+      "comparison": "3",
+      "value": "51",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Limit 50 Messages\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "message": "0",
+      "varName": "message",
+      "info": "1",
+      "storage": "1",
+      "varName2": "message-id",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "count": "${tempVars(\"purgeValue\")}",
+      "option": "1",
+      "msgid": "${tempVars(\"message-id\")}",
+      "Con0": "",
+      "Con1": "",
+      "Con2": "0",
+      "Con3": "https://",
+      "Con4": "",
+      "Con5": "0",
+      "name": "Delete Bulk Messages MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "invite",
+      "color": "#0080c0",
+      "description": "PURGE INVITE",
+      "name": "Create Anchor"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Usage `purge invites <range>`\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "purgeValue",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeValue",
+      "comparison": "3",
+      "value": "51",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Limit 50 Messages\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "message": "0",
+      "varName": "message",
+      "info": "1",
+      "storage": "1",
+      "varName2": "message-id",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "count": "${tempVars(\"purgeValue\")}",
+      "option": "1",
+      "msgid": "${tempVars(\"message-id\")}",
+      "Con0": "",
+      "Con1": "",
+      "Con2": "0",
+      "Con3": "https://discord.gg/",
+      "Con4": "",
+      "Con5": "0",
+      "name": "Delete Bulk Messages MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "image",
+      "color": "#0080c0",
+      "description": "PURGE IMAGE",
+      "name": "Create Anchor"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Usage `purge images <range>`\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "purgeValue",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "purgeValue",
+      "comparison": "3",
+      "value": "51",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Limit 50 Messages\"}});\n",
+      "storage": "1",
+      "varName": "limit",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "message": "0",
+      "varName": "message",
+      "info": "1",
+      "storage": "1",
+      "varName2": "message-id",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "count": "${tempVars(\"purgeValue\")}",
+      "option": "1",
+      "msgid": "${tempVars(\"message-id\")}",
+      "Con0": "",
+      "Con1": "",
+      "Con2": "0",
+      "Con3": "",
+      "Con4": "",
+      "Con5": "2",
+      "name": "Delete Bulk Messages MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "_id": "SaYzB",
+  "_aliases": [
+    "prune"
+  ]
+}

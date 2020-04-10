@@ -1,0 +1,1046 @@
+{
+  "name": "userinfo",
+  "permissions": "SEND_MESSAGES",
+  "restriction": "1",
+  "_id": "EUoLo",
+  "actions": [
+    {
+      "comment": "MENTIONED USER",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "object",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "7",
+      "storage": "1",
+      "varName2": "name",
+      "name": "Store Member Things"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "12",
+      "storage": "1",
+      "varName2": "img",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "11",
+      "storage": "1",
+      "varName2": "status",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "12",
+      "storage": "1",
+      "varName2": "img",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "nickname",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "20",
+      "storage": "1",
+      "varName2": "roleamount",
+      "name": "Store Member Info"
+    },
+    {
+      "FirstNumber": "${tempVars(\"roleamount\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "1",
+      "varName": "roleamount",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "13",
+      "storage": "1",
+      "varName2": "role",
+      "name": "Store Member Info"
+    },
+    {
+      "text": "${tempVars(\"role\")}",
+      "text2": "@everyone",
+      "text3": "",
+      "info": "1",
+      "storage": "1",
+      "varName": "role",
+      "name": "Replace Text"
+    },
+    {
+      "text": "${tempVars(\"role\")}",
+      "text2": ",",
+      "text3": " ",
+      "info": "1",
+      "storage": "1",
+      "varName": "role",
+      "name": "Replace Text"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "14",
+      "storage": "1",
+      "varName2": "joindate",
+      "name": "Store Member Info"
+    },
+    {
+      "date": "${tempVars(\"joindate\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "joindate(daytext)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"joindate\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "joindate(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"joindate\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "joindate(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"joindate\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "joindate(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"joindate\")}",
+      "info": "7",
+      "storage": "1",
+      "varName": "joindate(hour)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"joindate\")}",
+      "info": "9",
+      "storage": "1",
+      "varName": "joindate(minute)",
+      "name": "Store Date Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var timeString = \"${tempVars(\"joindate(hour)\")}:${tempVars(\"joindate(minute)\")}\";\nvar H = +timeString.substr(0, 2);\nvar h = H % 12 || 12;\nvar ampm = (H < 12 || H === 24) ? \" AM\" : \" PM\";\ntimeString = h + timeString.substr(2, 3) + ampm;",
+      "storage": "1",
+      "varName": "joindate(time)",
+      "name": "Run Script"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "17",
+      "storage": "1",
+      "varName2": "registereddate",
+      "name": "Store Member Info"
+    },
+    {
+      "date": "${tempVars(\"registereddate\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "registered(daytext)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"registereddate\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "registered(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"registereddate\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "registered(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"registereddate\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "registered(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"registereddate\")}",
+      "info": "7",
+      "storage": "1",
+      "varName": "registered(hour)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"registereddate\")}",
+      "info": "9",
+      "storage": "1",
+      "varName": "registered(minute)",
+      "name": "Store Date Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var timeString = \"${tempVars(\"registered(hour)\")}:${tempVars(\"registered(minute)\")}\";\nvar H = +timeString.substr(0, 2);\nvar h = H % 12 || 12;\nvar ampm = (H < 12 || H === 24) ? \" AM\" : \" PM\";\ntimeString = h + timeString.substr(2, 3) + ampm;",
+      "storage": "1",
+      "varName": "registered(time)",
+      "name": "Run Script"
+    },
+    {
+      "comment": "USER",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "authobject",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "7",
+      "storage": "1",
+      "varName2": "authname",
+      "name": "Store Member Things"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "12",
+      "storage": "1",
+      "varName2": "authimg",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "11",
+      "storage": "1",
+      "varName2": "authstatus",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "authid",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "12",
+      "storage": "1",
+      "varName2": "authimg",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "authnickname",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "20",
+      "storage": "1",
+      "varName2": "authroleamount",
+      "name": "Store Member Info"
+    },
+    {
+      "FirstNumber": "${tempVars(\"authroleamount\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "1",
+      "varName": "authroleamount",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "13",
+      "storage": "1",
+      "varName2": "authrole",
+      "name": "Store Member Info"
+    },
+    {
+      "text": "${tempVars(\"authrole\")}",
+      "text2": "@everyone",
+      "text3": "",
+      "info": "1",
+      "storage": "1",
+      "varName": "authrole",
+      "name": "Replace Text"
+    },
+    {
+      "text": "${tempVars(\"authrole\")}",
+      "text2": ",",
+      "text3": " ",
+      "info": "1",
+      "storage": "1",
+      "varName": "authrole",
+      "name": "Replace Text"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "14",
+      "storage": "1",
+      "varName2": "authjoindate",
+      "name": "Store Member Info"
+    },
+    {
+      "date": "${tempVars(\"authjoindate\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "authjoindate(daytext)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authjoindate\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "authjoindate(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authjoindate\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "authjoindate(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authjoindate\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "authjoindate(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authjoindate\")}",
+      "info": "7",
+      "storage": "1",
+      "varName": "authjoindate(hour)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authjoindate\")}",
+      "info": "9",
+      "storage": "1",
+      "varName": "authjoindate(minute)",
+      "name": "Store Date Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var timeString = \"${tempVars(\"authjoindate(hour)\")}:${tempVars(\"authjoindate(minute)\")}\";\nvar H = +timeString.substr(0, 2);\nvar h = H % 12 || 12;\nvar ampm = (H < 12 || H === 24) ? \" AM\" : \" PM\";\ntimeString = h + timeString.substr(2, 3) + ampm;",
+      "storage": "1",
+      "varName": "authjoindate(time)",
+      "name": "Run Script"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "17",
+      "storage": "1",
+      "varName2": "authregistereddate",
+      "name": "Store Member Info"
+    },
+    {
+      "date": "${tempVars(\"authregistereddate\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "authregistered(daytext)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authregistereddate\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "authregistered(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authregistereddate\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "authregistered(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authregistereddate\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "authregistered(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authregistereddate\")}",
+      "info": "7",
+      "storage": "1",
+      "varName": "authregistered(hour)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"authregistereddate\")}",
+      "info": "9",
+      "storage": "1",
+      "varName": "authregistered(minute)",
+      "name": "Store Date Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var timeString = \"${tempVars(\"authregistered(hour)\")}:${tempVars(\"authregistered(minute)\")}\";\nvar H = +timeString.substr(0, 2);\nvar h = H % 12 || 12;\nvar ampm = (H < 12 || H === 24) ? \" AM\" : \" PM\";\ntimeString = h + timeString.substr(2, 3) + ampm;",
+      "storage": "1",
+      "varName": "authregistered(time)",
+      "name": "Run Script"
+    },
+    {
+      "comment": "COMMAND",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "84",
+      "iffalse": "3",
+      "iffalseVal": "12",
+      "name": "Check Parameters"
+    },
+    {
+      "comment": "MENTION",
+      "color": "#ffff00",
+      "name": "Comment"
+    },
+    {
+      "title": "User Information",
+      "author": "${tempVars(\"name\")}",
+      "color": "#1666ac",
+      "url": "",
+      "authorIcon": "${tempVars(\"img\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"img\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"object\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Nickname",
+      "message": "${tempVars(\"nickname\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User Status",
+      "message": "${tempVars(\"status\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User ID",
+      "message": "`${tempVars(\"id\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Joined",
+      "message": "${tempVars(\"joindate(time)\")} \n${tempVars(\"joindate(daytext)\")}, ${tempVars(\"joindate(day)\")} ${tempVars(\"joindate(month)\")} ${tempVars(\"joindate(year)\")} ",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Registered",
+      "message": "${tempVars(\"registered(time)\")} \n${tempVars(\"registered(daytext)\")}, ${tempVars(\"registered(day)\")} ${tempVars(\"registered(month)\")} ${tempVars(\"registered(year)\")} ",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Roles [${tempVars(\"roleamount\")}]",
+      "message": "${tempVars(\"role\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "USER",
+      "color": "#ffff00",
+      "name": "Comment"
+    },
+    {
+      "title": "User Information",
+      "author": "${tempVars(\"authname\")}",
+      "color": "#1666ac",
+      "url": "",
+      "authorIcon": "${tempVars(\"authimg\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"authimg\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"authobject\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Nickname",
+      "message": "${tempVars(\"authnickname\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User Status",
+      "message": "${tempVars(\"authstatus\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User ID",
+      "message": "`${tempVars(\"authid\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Joined",
+      "message": "${tempVars(\"authjoindate(time)\")} \n${tempVars(\"authjoindate(daytext)\")}, ${tempVars(\"authjoindate(day)\")} ${tempVars(\"authjoindate(month)\")} ${tempVars(\"authjoindate(year)\")} ",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Registered",
+      "message": "${tempVars(\"authregistered(time)\")} \n${tempVars(\"authregistered(daytext)\")}, ${tempVars(\"authregistered(day)\")} ${tempVars(\"authregistered(month)\")} ${tempVars(\"authregistered(year)\")} ",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Roles [${tempVars(\"authroleamount\")}]",
+      "message": "${tempVars(\"authrole\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "FIND USER",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "text",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"text\")}",
+      "storage": "1",
+      "varName": "finduser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "finduser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"text\")}",
+      "storage": "1",
+      "varName": "finduser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "finduser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "6",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"text\")}",
+      "storage": "1",
+      "varName": "finduser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "finduser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "2",
+      "find": "${tempVars(\"text\")}",
+      "storage": "1",
+      "varName": "finduser",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "finduser",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"${member} `${tempVars(\"text\")}` | **User** not found!\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "0",
+      "storage": "1",
+      "varName2": "finduserobject",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "18",
+      "storage": "1",
+      "varName2": "findusertag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "12",
+      "storage": "1",
+      "varName2": "finduseravatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "11",
+      "storage": "1",
+      "varName2": "finduserstatus",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "1",
+      "storage": "1",
+      "varName2": "finduserid",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "3",
+      "storage": "1",
+      "varName2": "findusernickname",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "20",
+      "storage": "1",
+      "varName2": "finduserroleamount",
+      "name": "Store Member Info"
+    },
+    {
+      "FirstNumber": "${tempVars(\"finduserroleamount\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "1",
+      "varName": "finduserroleamount",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "13",
+      "storage": "1",
+      "varName2": "finduserrolelist",
+      "name": "Store Member Info"
+    },
+    {
+      "text": "${tempVars(\"finduserrolelist\")}",
+      "text2": "@everyone",
+      "text3": "",
+      "info": "1",
+      "storage": "1",
+      "varName": "finduserrolelist",
+      "name": "Replace Text"
+    },
+    {
+      "text": "${tempVars(\"finduserrolelist\")}",
+      "text2": ",",
+      "text3": " ",
+      "info": "1",
+      "storage": "1",
+      "varName": "finduserrolelist",
+      "name": "Replace Text"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "14",
+      "storage": "1",
+      "varName2": "finduserjoindate",
+      "name": "Store Member Info"
+    },
+    {
+      "date": "${tempVars(\"finduserjoindate\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "finduserjoindate(daytext)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserjoindate\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "finduserjoindate(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserjoindate\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "finduserjoindate(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserjoindate\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "finduserjoindate(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserjoindate\")}",
+      "info": "7",
+      "storage": "1",
+      "varName": "finduserjoindate(hour)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserjoindate\")}",
+      "info": "9",
+      "storage": "1",
+      "varName": "finduserjoindate(minute)",
+      "name": "Store Date Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var timeString = \"${tempVars(\"finduserjoindate(hour)\")}:${tempVars(\"finduserjoindate(minute)\")}\";\nvar H = +timeString.substr(0, 2);\nvar h = H % 12 || 12;\nvar ampm = (H < 12 || H === 24) ? \" AM\" : \" PM\";\ntimeString = h + timeString.substr(2, 3) + ampm;",
+      "storage": "1",
+      "varName": "finduserjoindate(time)",
+      "name": "Run Script"
+    },
+    {
+      "member": "2",
+      "varName": "finduser",
+      "info": "17",
+      "storage": "1",
+      "varName2": "finduserregistered",
+      "name": "Store Member Info"
+    },
+    {
+      "date": "${tempVars(\"finduserregistered\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "finduserregistered(daytext)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserregistered\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "finduserregistered(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserregistered\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "finduserregistered(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserregistered\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "finduserregistered(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserregistered\")}",
+      "info": "7",
+      "storage": "1",
+      "varName": "finduserregistered(hour)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"finduserregistered\")}",
+      "info": "9",
+      "storage": "1",
+      "varName": "finduserregistered(minute)",
+      "name": "Store Date Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var timeString = \"${tempVars(\"finduserregistered(hour)\")}:${tempVars(\"finduserregistered(minute)\")}\";\nvar H = +timeString.substr(0, 2);\nvar h = H % 12 || 12;\nvar ampm = (H < 12 || H === 24) ? \" AM\" : \" PM\";\ntimeString = h + timeString.substr(2, 3) + ampm;",
+      "storage": "1",
+      "varName": "finduserregistered(time)",
+      "name": "Run Script"
+    },
+    {
+      "comment": "FIND USER",
+      "color": "#ffff00",
+      "name": "Comment"
+    },
+    {
+      "title": "User Information",
+      "author": "${tempVars(\"findusertag\")}",
+      "color": "#1666ac",
+      "url": "",
+      "authorIcon": "${tempVars(\"finduseravatar\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"finduseravatar\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"finduserobject\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Nickname",
+      "message": "${tempVars(\"findusernickname\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User Status",
+      "message": "${tempVars(\"finduserstatus\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User ID",
+      "message": "`${tempVars(\"finduserid\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Joined",
+      "message": "${tempVars(\"finduserjoindate(time)\")} \n${tempVars(\"finduserjoindate(daytext)\")}, ${tempVars(\"finduserjoindate(day)\")} ${tempVars(\"finduserjoindate(month)\")} ${tempVars(\"finduserjoindate(year)\")} ",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Registered",
+      "message": "${tempVars(\"finduserregistered(time)\")} \n${tempVars(\"finduserregistered(daytext)\")}, ${tempVars(\"finduserregistered(day)\")} ${tempVars(\"finduserregistered(month)\")} ${tempVars(\"finduserregistered(year)\")} ",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Roles [${tempVars(\"finduserroleamount\")}]",
+      "message": "${tempVars(\"finduserrolelist\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

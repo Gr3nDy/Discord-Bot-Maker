@@ -1,0 +1,2161 @@
+{
+  "name": "token",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "BdULi",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You don't have permission to do that!\"}});\n",
+      "storage": "1",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "↓ LOG CHANNEL ↓",
+      "color": "#03fc73",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "LOG CHANNEL ID",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "↓ BOT CHANNEL ↓",
+      "color": "#03fc73",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "BOT CHANNEL ID",
+      "storage": "1",
+      "varName": "bot-channel",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "↓ DATA TYPE LIST ↓ [MEMBER DATA] (Case Sensitive) ",
+      "color": "#03fc73",
+      "name": "Comment"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "1",
+      "code": "/^(datatype1|datatype2|datatype3|datatype4)$/",
+      "storage": "1",
+      "varName": "datatype-list",
+      "name": "Run Script"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Parameters"
+    },
+    {
+      "anchor_id": "6",
+      "color": "#ff00ff",
+      "description": "HELP",
+      "name": "Create Anchor"
+    },
+    {
+      "title": "TokenMe",
+      "author": "",
+      "color": "RED",
+      "url": "https://github.com/Gr3nDy/DBM-RawData/blob/master/Package/tokenme/help.md",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "https://raw.githubusercontent.com/Gr3nDy/DBM-RawData/master/Package/tokenme/Screenshot/icon.png",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg0",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "message": "`token create <datatype> <value> <duration>` | Create Token\n`token gift <user> <datatype> <value> <duration>` | Gift Token\n`token list` | List of active token\n`token check <token>` | Check token data\n`token delete <token>` | Delete token\n`redeem <token>` | Redeem token",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "msg0",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "3",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide type [Create/List/Check/Delete]\"}});\n",
+      "storage": "1",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "type",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(create|creates)",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(list)",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(check)",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(delete|remove)",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(help)",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(gift)",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(redeem)",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Invalid [Create/Gift/List/Check/Delete]\"}});\n",
+      "storage": "1",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "description": "Jump To CREATE",
+      "jump_to_anchor": "1",
+      "color": "#ff0000",
+      "name": "Jump to Anchor"
+    },
+    {
+      "description": "Jump To LIST",
+      "jump_to_anchor": "2",
+      "color": "#ffff00",
+      "name": "Jump to Anchor"
+    },
+    {
+      "description": "Jump To CHECK",
+      "jump_to_anchor": "3",
+      "color": "#80ff00",
+      "name": "Jump to Anchor"
+    },
+    {
+      "description": "Jump To DELETE",
+      "jump_to_anchor": "5",
+      "color": "#0080c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "description": "Jump To HELP",
+      "jump_to_anchor": "6",
+      "color": "#ff00ff",
+      "name": "Jump to Anchor"
+    },
+    {
+      "description": "Jump To GIFT",
+      "jump_to_anchor": "7",
+      "color": "#ff80c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "description": "Jump To REDEEM",
+      "jump_to_anchor": "10",
+      "color": "#400080",
+      "name": "Jump to Anchor"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "1",
+      "color": "#ff0000",
+      "description": "CREATE",
+      "name": "Create Anchor"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _datattype_\"}});\n",
+      "storage": "1",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "dataname",
+      "name": "Store Command Params"
+    },
+    {
+      "comment": "datatype",
+      "color": "#f8ff97",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "dataname",
+      "comparison": "12",
+      "value": "${tempVars(\"datatype-list\")}",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Invalid _datatype_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "3",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _value_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "value",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "value",
+      "comparison": "6",
+      "value": "^\\d+$",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Invalid _value_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "3",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _duration_ \\nEx: `1d` for 1 day, `2h` for 2 hours, `3m` for 3 minutes \"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "DURATION",
+      "color": "#400040",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "infoIndex": "4",
+      "storage": "1",
+      "varName": "duration",
+      "name": "Store Command Params"
+    },
+    {
+      "changeType": "0",
+      "value": "1",
+      "storage": "1",
+      "varName": "extrac",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"duration\").length}",
+      "storage": "1",
+      "varName": "duration-length",
+      "name": "Control Variable"
+    },
+    {
+      "anchor_id": "loop",
+      "color": "#8000ff",
+      "description": "[Duration Loop]",
+      "name": "Create Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const slice = tempVars(\"duration\").slice(0, tempVars(\"extrac\"))\nthis.storeValue(slice, 1, \"slice\", cache);\nconst slice2 = !isNaN(tempVars(\"slice\"));\nthis.storeValue(slice2, 1, \"slice2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "slice2",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "extrac",
+      "comparison": "1",
+      "value": "tempVars(\"duration-length\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must include a duration type \\nex: 24__**h**__.\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "extrac",
+      "name": "Control Variable"
+    },
+    {
+      "description": "Jump To [Duration Loop]",
+      "jump_to_anchor": "loop",
+      "color": "#8000ff",
+      "name": "Jump to Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const numerical = tempVars(\"slice\").slice(0, tempVars(\"extrac\") - 1)\nconst letter = tempVars(\"slice\").slice(tempVars(\"extrac\") - 1, tempVars(\"extrac\"))\nthis.storeValue(numerical, 1, \"numerical\", cache);\nthis.storeValue(letter, 1, \"letter\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "numerical",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide a numerical length for the duration \\nex: __**24**__h.\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "---",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "letter",
+      "comparison": "6",
+      "value": "(m)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const tokenExpires = Math.round((Date.now() + (tempVars(\"numerical\") * 60000)) / 1000);\nthis.storeValue(tokenExpires, 1, \"tokenExpires\", cache);\nconst tokenExpires2 = Date.now() + (tempVars(\"numerical\")) * 60000\nthis.storeValue(tokenExpires2, 1, \"tokenExpires2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "changeType": "0",
+      "value": "\"minute(s)\"",
+      "storage": "1",
+      "varName": "time",
+      "name": "Control Variable"
+    },
+    {
+      "count": "10",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "letter",
+      "comparison": "6",
+      "value": "(h)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const tokenExpires = Math.round((Date.now() + (tempVars(\"numerical\") * 3600000)) / 1000);\nthis.storeValue(tokenExpires, 1, \"tokenExpires\", cache);\nconst tokenExpires2 = Date.now() + (tempVars(\"numerical\")) * 3600000\nthis.storeValue(tokenExpires2, 1, \"tokenExpires2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "changeType": "0",
+      "value": "\"hour(s)\"",
+      "storage": "1",
+      "varName": "time",
+      "name": "Control Variable"
+    },
+    {
+      "count": "6",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "letter",
+      "comparison": "6",
+      "value": "(d)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const tokenExpires = Math.round((Date.now() + (tempVars(\"numerical\") * 86400000)) / 1000);\nthis.storeValue(tokenExpires, 1, \"tokenExpires\", cache);\nconst tokenExpires2 = Date.now() + (tempVars(\"numerical\")) * 86400000\nthis.storeValue(tokenExpires2, 1, \"tokenExpires2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "changeType": "0",
+      "value": "\"day(s)\"",
+      "storage": "1",
+      "varName": "time",
+      "name": "Control Variable"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Incorrect _DURATION_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "token-creator",
+      "name": "Store Member Info"
+    },
+    {
+      "comment": "-",
+      "color": "#808040",
+      "name": "Comment"
+    },
+    {
+      "time": "${tempVars(\"tokenExpires\")}",
+      "storage": "1",
+      "varName": "tokenExpiresDATE",
+      "name": "Convert Timestamp to Date"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "6",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(time)",
+      "name": "Store Date Info"
+    },
+    {
+      "comment": "-",
+      "color": "#808040",
+      "name": "Comment"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const chars = [...\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\"];\n[...Array(9)].map(i=>chars[Math.random()*chars.length|0]).join``;",
+      "storage": "1",
+      "varName": "chars",
+      "name": "Run Script"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"chars\")}",
+      "filepath": "./resources/token/",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
+      "input": "{\n \"token\": \"${tempVars(\"chars\")}\",\n \"datatype\": \"${tempVars(\"dataname\")}\",\n \"value\": \"${tempVars(\"value\")}\",\n \"expires\": ${tempVars(\"tokenExpires2\")},\n \"expiredate\": \"${tempVars(\"tokenExpiresDATE(month)\")} ${tempVars(\"tokenExpiresDATE(day)\")} ${tempVars(\"tokenExpiresDATE(year)\")}\",\n \"expiretime\": \"${tempVars(\"tokenExpiresDATE(time)\")}\",\n \"tokencreator\": \"${tempVars(\"token-creator\")}\",\n \"duration\": \"${tempVars(\"numerical\")} ${tempVars(\"time\")}\",\n \"giftedto\": \"none\"\n}",
+      "format": ".json",
+      "filename": "${tempVars(\"chars\")}",
+      "filepath": "./resources/token/",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "title": "",
+      "author": "${msg.author.username}",
+      "color": "#1fff80",
+      "url": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "token",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "message": "**Token Successfully Created**",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "fieldName": "Token",
+      "message": "||_${tempVars(\"chars\")}_||\n",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "message": "Expired in ${tempVars(\"numerical\")} ${tempVars(\"time\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "title": "Token Created",
+      "author": "${msg.author.username}",
+      "color": "#3269a8",
+      "url": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "token-created-log",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "token-created-log",
+      "fieldName": "Token",
+      "message": "||${tempVars(\"chars\")}||",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "token-created-log",
+      "fieldName": "Duration",
+      "message": "${tempVars(\"numerical\")} ${tempVars(\"time\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "token-created-log",
+      "fieldName": "Token Creator",
+      "message": "<@${msg.author.id}>",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "token-created-log",
+      "fieldName": "Expired Date",
+      "message": "${tempVars(\"tokenExpiresDATE(time)\")}\n${tempVars(\"tokenExpiresDATE(month)\")} ${tempVars(\"tokenExpiresDATE(day)\")} ${tempVars(\"tokenExpiresDATE(year)\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "token-created-log",
+      "fieldName": "Created In",
+      "message": "<#${msg.channel.id}>",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "token-created-log",
+      "channel": "5",
+      "varName2": "log-channel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "2",
+      "color": "#ffff00",
+      "description": "LIST",
+      "name": "Create Anchor"
+    },
+    {
+      "filename": "./resources/token/",
+      "storage": "1",
+      "varName2": "tokenlist",
+      "name": "Loop through Folder"
+    },
+    {
+      "text": "${tempVars(\"tokenlist\")}",
+      "text2": ".json",
+      "text3": "",
+      "info": "1",
+      "storage": "1",
+      "varName": "tokenlistresult",
+      "name": "Replace Text"
+    },
+    {
+      "text": "${tempVars(\"tokenlistresult\")}",
+      "text2": ",",
+      "text3": ", ",
+      "info": "1",
+      "storage": "1",
+      "varName": "tokenlistresult2",
+      "name": "Replace Text"
+    },
+    {
+      "title": "Token List",
+      "author": "",
+      "color": "#24556",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "tokenlistm",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "tokenlistm",
+      "message": "${tempVars(\"tokenlistresult2\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "tokenlistm",
+      "channel": "1",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:11114332,description:\"📎 **Token List** has been sent to your DM\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "3",
+      "color": "#00ff00",
+      "description": "CHECK",
+      "name": "Create Anchor"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _TOKEN_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "readtoken",
+      "name": "Store Command Params"
+    },
+    {
+      "filename": "./resources/token/${tempVars(\"readtoken\")}.json",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check if File Exists"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Token is not Exist/Expired\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "filename": "./resources/token/${tempVars(\"readtoken\")}.json",
+      "storage": "1",
+      "varName2": "tokenjson",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.token",
+      "storage": "1",
+      "varName": "tokenpass",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "/(${tempVars(\"tokenpass\")})/",
+      "storage": "1",
+      "varName": "tokenpass2",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "readtoken",
+      "comparison": "12",
+      "value": "tempVars(\"tokenpass2\")",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Token is not Exist/Expired\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.datatype",
+      "storage": "1",
+      "varName": "datatypejson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.value",
+      "storage": "1",
+      "varName": "valuejson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.expiredate",
+      "storage": "1",
+      "varName": "expiredatejson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.expiretime",
+      "storage": "1",
+      "varName": "expiretimejson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.duration",
+      "storage": "1",
+      "varName": "durationjson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.giftedto",
+      "storage": "1",
+      "varName": "giftedtojson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.tokencreator",
+      "storage": "1",
+      "varName": "tokencreatorjson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"tokencreatorjson\")}",
+      "storage": "1",
+      "varName": "tokencreator-mem",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "tokencreator-mem",
+      "info": "0",
+      "storage": "1",
+      "varName2": "tokencreator-mem(obj)",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "tokencreator-mem",
+      "info": "2",
+      "storage": "1",
+      "varName2": "tokencreator-mem(username)",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "tokencreator-mem",
+      "info": "12",
+      "storage": "1",
+      "varName2": "tokencreator-mem(avatar)",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "${tempVars(\"readtoken\")}",
+      "author": "${tempVars(\"tokencreator-mem(username)\")}",
+      "color": "GREEN",
+      "url": "",
+      "authorIcon": "${tempVars(\"tokencreator-mem(avatar)\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "textokenm",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "fieldName": "Data Type",
+      "message": "${tempVars(\"datatypejson\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "fieldName": "Value",
+      "message": "${tempVars(\"valuejson\")}\n",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "fieldName": "Token Creator",
+      "message": "${tempVars(\"tokencreator-mem(obj)\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "giftedtojson",
+      "comparison": "1",
+      "value": "\"none\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "fieldName": "Gifted To",
+      "message": "`None`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "count": "3",
+      "name": "Skip Actions"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"giftedtojson\")}",
+      "storage": "1",
+      "varName": "giftedto-mem",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "giftedto-mem",
+      "info": "0",
+      "storage": "1",
+      "varName2": "giftedto-mem(obj)",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "fieldName": "Gifted To",
+      "message": "${tempVars(\"giftedto-mem(obj)\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "fieldName": "Duration",
+      "message": "${tempVars(\"durationjson\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "fieldName": "Expired Date",
+      "message": "${tempVars(\"expiretimejson\")}\n${tempVars(\"expiredatejson\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "textokenm",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "5",
+      "color": "#0080c0",
+      "description": "DELETE",
+      "name": "Create Anchor"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _TOKEN_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "readtoken",
+      "name": "Store Command Params"
+    },
+    {
+      "filename": "./resources/token/${tempVars(\"readtoken\")}.json",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check if File Exists"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Token is not Exist/Expired\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "filename": "./resources/token/${tempVars(\"readtoken\")}.json",
+      "storage": "1",
+      "varName2": "tokenjson",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "tokenjson",
+      "path": "$.token",
+      "storage": "1",
+      "varName": "tokenpass",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "/(${tempVars(\"tokenpass\")})/",
+      "storage": "1",
+      "varName": "tokenpass2",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "readtoken",
+      "comparison": "12",
+      "value": "tempVars(\"tokenpass2\")",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Token is not Exist/Expired\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"readtoken\")}",
+      "filepath": "./resources/token/",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:3735445,description:\"Token Succesfully Deleted\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "7",
+      "color": "#ff00ff",
+      "description": "GIFT",
+      "name": "Create Anchor"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _username/userid_\"}});\n",
+      "storage": "1",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "username",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"username\")}",
+      "storage": "1",
+      "varName": "user",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"username\")}",
+      "storage": "1",
+      "varName": "user",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "7",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"username\")}",
+      "storage": "1",
+      "varName": "user",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "2",
+      "find": "${tempVars(\"username\")}",
+      "storage": "1",
+      "varName": "user",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"${member} `${tempVars(\"username\")}` | **User** not found!\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "user",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "3",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _datattype_\"}});\n",
+      "storage": "1",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "dataname",
+      "name": "Store Command Params"
+    },
+    {
+      "comment": "datatype",
+      "color": "#f8ff97",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "dataname",
+      "comparison": "12",
+      "value": "${tempVars(\"datatype-list\")}",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Invalid _datatype_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _value_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "18",
+      "storage": "1",
+      "varName2": "user.tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "12",
+      "storage": "1",
+      "varName2": "user.avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "1",
+      "storage": "1",
+      "varName2": "user.id",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "0",
+      "infoIndex": "4",
+      "storage": "1",
+      "varName": "value",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "value",
+      "comparison": "6",
+      "value": "^\\d+$",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Invalid _value_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "4",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide _duration_ \\nEx: `1d` for 1 day, `2h` for 2 hours, `3m` for 3 minutes \"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "DURATION",
+      "color": "#400040",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "infoIndex": "5",
+      "storage": "1",
+      "varName": "duration",
+      "name": "Store Command Params"
+    },
+    {
+      "changeType": "0",
+      "value": "1",
+      "storage": "1",
+      "varName": "extrac",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"duration\").length}",
+      "storage": "1",
+      "varName": "duration-length",
+      "name": "Control Variable"
+    },
+    {
+      "anchor_id": "loop2",
+      "color": "#8000ff",
+      "description": "[Gift Duration Loop]",
+      "name": "Create Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const slice = tempVars(\"duration\").slice(0, tempVars(\"extrac\"))\nthis.storeValue(slice, 1, \"slice\", cache);\nconst slice2 = !isNaN(tempVars(\"slice\"));\nthis.storeValue(slice2, 1, \"slice2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const chars = [...\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\"];\n[...Array(9)].map(i=>chars[Math.random()*chars.length|0]).join``;",
+      "storage": "1",
+      "varName": "chars",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "slice2",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "extrac",
+      "comparison": "1",
+      "value": "tempVars(\"duration-length\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must include a duration type \\nex: 24__**h**__.\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "extrac",
+      "name": "Control Variable"
+    },
+    {
+      "description": "Jump To [Gift Duration Loop]",
+      "jump_to_anchor": "loop2",
+      "color": "#8000ff",
+      "name": "Jump to Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const numerical = tempVars(\"slice\").slice(0, tempVars(\"extrac\") - 1)\nconst letter = tempVars(\"slice\").slice(tempVars(\"extrac\") - 1, tempVars(\"extrac\"))\nthis.storeValue(numerical, 1, \"numerical\", cache);\nthis.storeValue(letter, 1, \"letter\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "numerical",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"You must provide a numerical length for the duration \\nex: __**24**__h.\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "---",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "letter",
+      "comparison": "6",
+      "value": "(m)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const tokenExpires = Math.round((Date.now() + (tempVars(\"numerical\") * 60000)) / 1000);\nthis.storeValue(tokenExpires, 1, \"tokenExpires\", cache);\nconst tokenExpires2 = Date.now() + (tempVars(\"numerical\")) * 60000\nthis.storeValue(tokenExpires2, 1, \"tokenExpires2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "\"minute(s)\"",
+      "storage": "1",
+      "varName": "time",
+      "name": "Run Script"
+    },
+    {
+      "count": "10",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "letter",
+      "comparison": "6",
+      "value": "(h)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const tokenExpires = Math.round((Date.now() + (tempVars(\"numerical\") * 3600000)) / 1000);\nthis.storeValue(tokenExpires, 1, \"tokenExpires\", cache);\nconst tokenExpires2 = Date.now() + (tempVars(\"numerical\")) * 3600000\nthis.storeValue(tokenExpires2, 1, \"tokenExpires2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "\"hour(s)\"",
+      "storage": "1",
+      "varName": "time",
+      "name": "Run Script"
+    },
+    {
+      "count": "6",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "letter",
+      "comparison": "6",
+      "value": "(d)",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const tokenExpires = Math.round((Date.now() + (tempVars(\"numerical\") * 86400000)) / 1000);\nthis.storeValue(tokenExpires, 1, \"tokenExpires\", cache);\nconst tokenExpires2 = Date.now() + (tempVars(\"numerical\")) * 86400000\nthis.storeValue(tokenExpires2, 1, \"tokenExpires2\", cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "\"day(s)\"",
+      "storage": "1",
+      "varName": "time",
+      "name": "Run Script"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Incorrect _DURATION_\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "token-creator",
+      "name": "Store Member Info"
+    },
+    {
+      "comment": "-",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "time": "${tempVars(\"tokenExpires\")}",
+      "storage": "1",
+      "varName": "tokenExpiresDATE",
+      "name": "Convert Timestamp to Date"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(day)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(month)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(year)",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"tokenExpiresDATE\")}",
+      "info": "6",
+      "storage": "1",
+      "varName": "tokenExpiresDATE(time)",
+      "name": "Store Date Info"
+    },
+    {
+      "comment": "-",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const chars = [...\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\"];\n[...Array(9)].map(i=>chars[Math.random()*chars.length|0]).join``;",
+      "storage": "1",
+      "varName": "chars",
+      "name": "Run Script"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"chars\")}",
+      "filepath": "./resources/token/",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
+      "input": "{\n \"token\": \"${tempVars(\"chars\")}\",\n \"datatype\": \"${tempVars(\"dataname\")}\",\n \"value\": \"${tempVars(\"value\")}\",\n \"expires\": ${tempVars(\"tokenExpires2\")},\n \"expiredate\": \"${tempVars(\"tokenExpiresDATE(month)\")} ${tempVars(\"tokenExpiresDATE(day)\")} ${tempVars(\"tokenExpiresDATE(year)\")}\",\n \"expiretime\": \"${tempVars(\"tokenExpiresDATE(time)\")}\",\n \"tokencreator\": \"${tempVars(\"token-creator\")}\",\n \"duration\": \"${tempVars(\"numerical\")} ${tempVars(\"time\")}\",\n \"giftedto\": \"${tempVars(\"user.id\")}\"\n}",
+      "format": ".json",
+      "filename": "${tempVars(\"chars\")}",
+      "filepath": "./resources/token/",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "title": "TokenMe",
+      "author": "",
+      "color": "#0a91f2",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "token",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "message": "🎁 ${tempVars(\"user\")} you has received a token.\nRedeem it on ${tempVars(\"bot-channel\")} by using `redeem`\n\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "fieldName": "Token",
+      "message": "||${tempVars(\"chars\")}||",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "message": "Expired in ${tempVars(\"numerical\")} ${tempVars(\"time\")} ",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "token",
+      "channel": "5",
+      "varName2": "user",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "description": "jump to [if gift failed]",
+      "jump_to_anchor": "ifgiftfailed",
+      "color": "#ff0000",
+      "name": "Jump to Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:0x1fff80,description:\"🎁 Token has been sent to ${tempVars(\"user\")}\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "title": "Token Sent",
+      "author": "${msg.author.username}",
+      "color": "#0000FF",
+      "url": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"user.avatar\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "tokenlog",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "tokenlog",
+      "message": "**${tempVars(\"user.tag\")}**\nToken has been sent to ${tempVars(\"user\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "tokenlog",
+      "fieldName": "Token",
+      "message": "||${tempVars(\"chars\")}||",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "tokenlog",
+      "fieldName": "Token Creator",
+      "message": "<@${msg.author.id}>",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "tokenlog",
+      "message": "Expired in ${tempVars(\"numerical\")} ${tempVars(\"time\")} | ${tempVars(\"tokenExpiresDATE(day)\")} ${tempVars(\"tokenExpiresDATE(month)\")} ${tempVars(\"tokenExpiresDATE(year)\")} | ${tempVars(\"tokenExpiresDATE(time)\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "tokenlog",
+      "channel": "5",
+      "varName2": "log-channel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "ifgiftfailed",
+      "color": "#ff0000",
+      "description": "if gift failed",
+      "name": "Create Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Token has been failed to send to ${tempVars(\"user\")} because of their DMs is Disabled | Token Deleted!\"}});\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"chars\")}",
+      "filepath": "./resources/token/",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "10",
+      "color": "#400080",
+      "description": "REDEEM",
+      "name": "Create Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.channel.send({embed:{color:15158332,description:\"Invalid Usage `redeem`\"}});\n",
+      "storage": "1",
+      "varName": "invalid-redeem",
+      "name": "Run Script"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid-redeem",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "TokenMe | release 1.1.2 | GrenDy",
+      "color": "#0080ff",
+      "name": "Comment"
+    }
+  ],
+  "_aliases": [
+    "tokenme"
+  ],
+  "comType": "0"
+}
