@@ -1,8 +1,8 @@
-# ![app icon](https://github.com/Gr3nDy/DBM-RawData/blob/master/Package/tokenme/Screenshot/icon.png) TokenMe
-[![release](https://img.shields.io/static/v1?label=release&message=1.1.2&color=red)](https://github.com/Gr3nDy/DBM-RawData/blob/master/Package/tokenme/help.md/)
+# ![app icon](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/Screenshot/icon.png) TokenMe
+[![release](https://img.shields.io/static/v1?label=release&message=1.1.2&color=red)](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/README.md)
 
 Convert <b>Member Data</b> into a reedemable <b>Token</b>
-![gif](https://github.com/Gr3nDy/DBM-RawData/blob/master/Package/tokenme/Screenshot/GIF.gif)
+![gif](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/Screenshot/GIF.gif)
 
 <b>Usage</b>
 * `[p]token create <datatype> <value> <duration>`
@@ -16,13 +16,13 @@ Convert <b>Member Data</b> into a reedemable <b>Token</b>
 
 <b>Commands</b>
 
-* [TokenMe](https://raw.githubusercontent.com/Gr3nDy/DBM-RawData/master/Package/tokenme/Commands/tokenme.json)
-* [Redeem](https://raw.githubusercontent.com/Gr3nDy/DBM-RawData/master/Package/tokenme/Commands/redeem.json)
+* [TokenMe](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/tokenme/Commands/tokenme.json)
+* [Redeem](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/tokenme/Commands/redeem.json)
 
 <b>Events</b>
 
-* [Loop 1](https://raw.githubusercontent.com/Gr3nDy/DBM-RawData/master/Package/tokenme/Events/Loop%201.json)
-* [Loop 2](https://raw.githubusercontent.com/Gr3nDy/DBM-RawData/master/Package/tokenme/Events/Loop%202.json)
+* [Loop 1](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/tokenme/Events/Loop%201.json)
+* [Loop 2](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/tokenme/Events/Loop%202.json)
 
 Copy <b>Commands</b> & <b>Events</b> and import to
 DBM.
