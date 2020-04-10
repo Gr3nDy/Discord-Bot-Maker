@@ -118,4 +118,4 @@ This Command is intended to be used only for one server
 Keep in mind that member data are case sensitive, so put the correct member data on `datatype` configuration or else it'll create a new member data
 <br>
 <br>
-[TokenMe | Wiki](wiki.md)
+[TokenMe | Wiki](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/wiki.md)
