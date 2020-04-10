@@ -3,8 +3,8 @@ Here's the place for all of my [Discord Bot Maker](https://store.steampowered.co
 
 # Raw Data
 You can find the list of <b>Raw Data</b> that i've created <br> 
-[Click Here]()
+[[Click Here]]()
 
 # Bots
-These are the list of my public <b>Discord Bots</b>
-[Click Here]()
+These are the list of my public <b>Discord Bots</b> <br>
+[[Click Here]]()
