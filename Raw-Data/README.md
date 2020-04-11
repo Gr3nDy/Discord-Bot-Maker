@@ -3,7 +3,7 @@
 <br>
 ⚠️<b>Make sure you've installed <em>betamods</em> on your DBM</b>⚠️
 
-# <h3> Embed Builder </h3>
+# ![Embed Builder Icon](https://github.com/Gr3nDy/DBM-Embed-Builder/blob/master/Screenshot/EB.png) <h3> Embed Builder </h3>
 This command allows you create embed inside discord from a json format <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/DBM-Embed-Builder)
 
