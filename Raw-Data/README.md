@@ -7,7 +7,7 @@
 This command allows you create embed inside discord from a json format <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/DBM-Embed-Builder)
 
-# <h3> TokenMe </h3>
+# <h3> ![TokenMe Icon](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/Screenshot/icon.png) TokenMe </h3>
 Convert member data into a redeemable token <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/README.md)
 
