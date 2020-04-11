@@ -7,4 +7,6 @@ Here's the place for me to keep track on all of my [Discord Bot Maker](https://s
 You can find the list of <b>Raw Data</b> that i've created <br> 
 [[Click Here]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/README.md)
 
-
+# <h4> Note </h4>
+Please consider to give this project a Star and set the [Notifictation to Watching](https://help.github.com/en/github/receiving-notifications-about-activity-on-github/watching-and-unwatching-repositories#watching-a-single-repository) to inform you when there's an update <br>
+![Watching] 
