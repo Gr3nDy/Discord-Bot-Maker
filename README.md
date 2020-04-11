@@ -9,4 +9,4 @@ You can find the list of <b>Raw Data</b> that i've created <br>
 
 # <h4> Note </h4>
 Please consider to give this project a Star and set the [Notifictation to Watching](https://help.github.com/en/github/receiving-notifications-about-activity-on-github/watching-and-unwatching-repositories#watching-a-single-repository) to inform you when there's an update <br>
-![Watching](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Resources/Watching.png)
+![Watching](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Resources/WATCHING.png)
