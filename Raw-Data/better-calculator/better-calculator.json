@@ -1,0 +1,266 @@
+{
+  "name": "calculate",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "sBBgD",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "18",
+      "storage": "1",
+      "varName2": "mem.tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "12",
+      "storage": "1",
+      "varName2": "mem.avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "comment": "---",
+      "color": "#808000",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "evaluation",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "description": "jump to main",
+      "jump_to_anchor": "main",
+      "color": "#00ffff",
+      "name": "Jump to Anchor"
+    },
+    {
+      "comment": "invalid",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "#ff4d5b",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "invalid",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid",
+      "message": "${member} | **Usage** `calc <calculation>`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "invalid",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "invalid-calc",
+      "color": "#ff8040",
+      "description": "invalid-calc",
+      "name": "Create Anchor"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "#ff4d5b",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "invalid",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid",
+      "message": "Invalid Evaluation\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid",
+      "fieldName": "Calculation",
+      "message": "```js\n${tempVars(\"evaluation\")}\n```\n",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid",
+      "message": "${tempVars(\"mem.tag\")}",
+      "footerIcon": "${tempVars(\"mem.avatar\")}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "main",
+      "color": "#00ffff",
+      "description": "main",
+      "name": "Create Anchor"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "function math(fn) {\n  return new Function('return ' + fn)();\n}\nmath('${tempVars(\"evaluation\")}')\n",
+      "storage": "1",
+      "varName": "result",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "\"${tempVars(\"result\")}\"",
+      "storage": "1",
+      "varName": "result",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "result",
+      "comparison": "12",
+      "value": "/(false)/",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "description": "jump to invalid-calc",
+      "jump_to_anchor": "invalid-calc",
+      "color": "#ff8040",
+      "name": "Jump to Anchor"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "#69ff52",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "evaluation-msg",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "evaluation-msg",
+      "fieldName": "Calculation",
+      "message": "```js\n${tempVars(\"evaluation\")}\n```",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "evaluation-msg",
+      "fieldName": "Result",
+      "message": "```js\n${tempVars(\"result\")}\n```",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "evaluation-msg",
+      "message": "${tempVars(\"mem.tag\")}",
+      "footerIcon": "${tempVars(\"mem.avatar\")}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "evaluation-msg",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "_aliases": [
+    "calc",
+    "calculator",
+    "bettercalculator"
+  ]
+}
