@@ -1,7 +1,7 @@
 # ![app icon](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/Screenshot/icon.png) TokenMe
 [![release](https://img.shields.io/static/v1?label=release&message=1.1.2&color=red)](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/README.md)
 
-Convert <b>Member Data</b> into a reedemable <b>Token</b>
+Convert <b>Member Data</b> into a reedemable <b>Token</b> <br>
 ![gif](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/tokenme/Screenshot/GIF.gif)
 
 <b>Usage</b>
