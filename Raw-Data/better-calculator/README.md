@@ -11,7 +11,7 @@ A Simple calculator command
 # Installation
 <b>Command</b>
 
-* [Better Calculator](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/better-calculator.json)
+* [Better Calculator](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/better-calculator/better-calculator.json)
 
 Copy <b>Command</b> and import to
 DBM.
