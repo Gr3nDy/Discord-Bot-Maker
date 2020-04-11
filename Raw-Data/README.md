@@ -22,3 +22,7 @@ This Command allows you to see a user's information <br>
 # <h3> Purge </h3>
 A Simple Purge messages command <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/purge/README.md)
+
+# <h3> Better Calculator </h3>
+Pretty much just a basic calculator command <br>
+[[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/better-calculator/README.md)
