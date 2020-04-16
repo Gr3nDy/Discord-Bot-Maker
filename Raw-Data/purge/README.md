@@ -24,7 +24,7 @@ DBM.
 * 5.Click on save
 
 # Note 
-This purge command is improved version of <br>
+This purge command is edited version of <br>
 https://canary.discordapp.com/channels/374961173524643843/574311656453177355/574319383573168151
 
 
