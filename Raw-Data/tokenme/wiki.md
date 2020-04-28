@@ -25,6 +25,12 @@ This is happen when the token didn't created correctly which causes the token.js
 # <h3>6. The bot logs keep spamming "WebAPI Parser: Error: {"error":{},"statusCode":0,"success":false} stored to: [expires]"</h3>
 Same as [FAQ #5](./wiki.md#5-the-bot-logs-keep-spamming-error-with-event-parse-from-stored-json-action-3-syntaxerror-unexpected-end-of-json-input) the token didn't created correctly which causes the bot can't read the token.json properly, this is might happen when you trying to edit the token.json manually or if you edited the "File Control Action" the wrong way. You can fix this error by updating your Mods and switch to Beta or if its still happening you need to delete the "token" folder `./resources/token` and Re-Install [TokenMe Raw Data](help.md)
 
+# <h3>7. Error: ENOENT: no such file or directory, scandir './resources/tokenme/'</h3>
+This error occured when the bot couldn't detect tokenme folder there's 2 solution;<br>
+1. Create a token by using the command (so it will automatically create tokenme folder) <br>
+2. If the first one didn't work the you could manually add `tokenme` folder manually <br>
+Add `tokenme` folder inside `'./resources/`
+
 
 # Customization
 Here's a few guides of how to customize your **TokenMe** command;
