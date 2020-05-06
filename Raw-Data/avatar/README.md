@@ -2,7 +2,7 @@
 # Avatar
 
 Gets a user or certain user profile picture
-[!pic](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/avatar/Screenshot/avatar.gif)
+![GIF](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/avatar/Screenshot/avatar.gif)
 
 **Usage:**
 * `[p]avatar <user>`
