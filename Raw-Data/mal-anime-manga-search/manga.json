@@ -224,6 +224,14 @@
       "iffalseVal": "",
       "messageContent": "",
       "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "https://github.com/Gr3nDy/Discord-Bot-Maker",
+      "color": "#ff0000",
+      "name": "Comment"
     }
   ]
 }
