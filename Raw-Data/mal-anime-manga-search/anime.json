@@ -1,0 +1,229 @@
+{
+  "name": "anime",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "iorXO",
+  "actions": [
+    {
+      "comment": "---",
+      "color": "#c0c0c0",
+      "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "bot",
+      "name": "Get Bot as Member"
+    },
+    {
+      "comment": "---",
+      "color": "#c0c0c0",
+      "name": "Comment"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "description": "Jump To [EXECUTE]",
+      "jump_to_anchor": "[EXECUTE]",
+      "color": "#8080c0",
+      "name": "Jump to Anchor"
+    },
+    {
+      "comment": "[CORRECT USAGE MSG]",
+      "color": "#f40000",
+      "name": "Comment"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "36393E",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg_correct_usage",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_correct_usage",
+      "message": "**Correct Usage;**\n``${this.getDBM().Files.data.settings.tag}anime <anime name>``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_correct_usage",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "[EXECUTE]",
+      "color": "#8080c0",
+      "description": "[EXECUTE]",
+      "name": "Create Anchor"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "animeSearch",
+      "name": "Store Command Params"
+    },
+    {
+      "comment": "---",
+      "color": "#808080",
+      "name": "Comment"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://api.jikan.moe/v3/search/anime?q=${tempVars(\"animeSearch\")}",
+      "path": "$.results[0].title",
+      "storage": "1",
+      "varName": "animeTitle",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://api.jikan.moe/v3/search/anime?q=${tempVars(\"animeSearch\")}",
+      "path": "$.results[0].url",
+      "storage": "1",
+      "varName": "animeURL",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://api.jikan.moe/v3/search/anime?q=${tempVars(\"animeSearch\")}",
+      "path": "$.results[0].image_url",
+      "storage": "1",
+      "varName": "animeimageURL",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://api.jikan.moe/v3/search/anime?q=${tempVars(\"animeSearch\")}",
+      "path": "$.results[0].score",
+      "storage": "1",
+      "varName": "animeScore",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://api.jikan.moe/v3/search/anime?q=${tempVars(\"animeSearch\")}",
+      "path": "$.results[0].synopsis",
+      "storage": "1",
+      "varName": "animeSynopsis",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "comment": "---",
+      "color": "#808080",
+      "name": "Comment"
+    },
+    {
+      "title": "${tempVars(\"animeTitle\")}",
+      "author": "",
+      "color": "${tempVars(\"bot\").colorRole.hexColor}",
+      "url": "${tempVars(\"animeURL\")}",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"animeimageURL\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg_result",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "fieldName": "Score",
+      "message": "${tempVars(\"animeScore\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "fieldName": "Synopsis",
+      "message": "${tempVars(\"animeSynopsis\")} [(more)](${tempVars(\"animeURL\")})",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "message": "Anime",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
