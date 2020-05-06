@@ -14,7 +14,7 @@ Gets a user or certain user profile picture <br>
 # Installation
 <b>Command</b>
 
-* [avatar](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/avatar/avatar.json)
+* [Avatar](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/avatar/avatar.json)
 
 Copy <b>Command</b> and import to
 DBM.
