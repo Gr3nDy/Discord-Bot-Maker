@@ -26,3 +26,11 @@ A Simple Purge messages command <br>
 # <h3> Better Calculator </h3>
 Pretty much just a basic calculator command <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/better-calculator/README.md)
+
+# <h3> Avatar </h3>
+Gets a user or certain user profile picture 
+[[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/avatar/README.md)
+
+# <h3> MyAnimeList Anime & Manga Search </h3>
+Search Anime & Manga
+[[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/mal-anime-manga-search/README.md)
