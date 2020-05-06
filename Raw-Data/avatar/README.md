@@ -1,7 +1,8 @@
 
 # Avatar
 
-Gets a user or certain user profile picture
+Gets a user or certain user profile picture <br>
+![GIF](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/avatar/Screenshot/avatar.gif)
 
 **Usage:**
 * `[p]avatar <user>`
@@ -13,7 +14,7 @@ Gets a user or certain user profile picture
 # Installation
 <b>Command</b>
 
-* [avatar](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/avatar/avatar.json)
+* [Avatar](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/avatar/avatar.json)
 
 Copy <b>Command</b> and import to
 DBM.
