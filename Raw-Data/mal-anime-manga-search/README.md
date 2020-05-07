@@ -8,7 +8,7 @@ Search Anime & Manga
 * `[p]manga <manga name>`
 
 **Features**
-* Fancy looking Score & Synpnosis
+* Fancy looking Score & Synopsis
 * An option to delete search result when message author react ❌ to the post
 
 # Installation
