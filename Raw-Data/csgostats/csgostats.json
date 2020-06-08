@@ -5,7 +5,7 @@
   "_id": "Znswj",
   "actions": [
     {
-      "comment": "| INSERT YOUR API KEY HERE | (Control Variable)",
+      "comment": "| INSERT YOUR STEAM API KEY HERE | (Control Variable)",
       "color": "#00ffff",
       "name": "Comment"
     },
@@ -365,7 +365,7 @@
       "name": "End Action Sequence"
     },
     {
-      "comment": "",
+      "comment": "By GrenDy | https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/csgostats",
       "color": "#ff0000",
       "name": "Comment"
     }
