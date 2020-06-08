@@ -23,3 +23,5 @@ DBM.
 * 4.Paste <b>Command</b>
 * 5.Click on save
 
+# Note
+Goto https://steamcommunity.com/dev/apikey to get your **API KEY**
