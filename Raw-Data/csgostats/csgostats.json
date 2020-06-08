@@ -1,0 +1,376 @@
+{
+  "name": "csgostats",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "Znswj",
+  "actions": [
+    {
+      "comment": "| INSERT YOUR API KEY HERE | (Control Variable)",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "changeType": "0",
+      "value": "'INSERT_YOUR_API_KEY_HERE'",
+      "storage": "1",
+      "varName": "apiKey",
+      "name": "Control Variable"
+    },
+    {
+      "comment": "---",
+      "color": "#ffffff",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "searchUsername",
+      "name": "Store Command Params"
+    },
+    {
+      "code": "let input = tempVars(\"searchUsername\");\nlet replace1 = input.replace(/\\//gmi, '');\nlet replace2 = replace1.replace(/https:steamcommunity.comid/gmi, '');\nlet replace3 = replace2.replace(/https:steamcommunity.comprofiles/gmi, '');\nActions.storeValue(replace3, 1, 'searchUsername', cache);\n",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${tempVars(\"apiKey\")}&vanityurl=${tempVars(\"searchUsername\")}",
+      "path": "$.response.success",
+      "storage": "1",
+      "varName": "response.Success",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "response.Success",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "4",
+      "iffalseVal": "[getProfileInfo]",
+      "name": "Check Variable"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${tempVars(\"apiKey\")}&vanityurl=${tempVars(\"searchUsername\")}",
+      "path": "$.response.steamid",
+      "storage": "1",
+      "varName": "searchUsername",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "anchor_id": "[getProfileInfo]",
+      "color": "#0080c0",
+      "description": "[getProfileInfo]",
+      "name": "Create Anchor"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${tempVars(\"apiKey\")}&steamids=${tempVars(\"searchUsername\")}",
+      "path": "$.response.players[0].profileurl",
+      "storage": "1",
+      "varName": "profile.URL",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "profile.URL",
+      "comparison": "1",
+      "value": "'{\"error\":\"No JSON Data Returned\",\"statusCode\":0}'",
+      "iftrue": "4",
+      "iftrueVal": "[ifSteamIDnotFound]",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${tempVars(\"apiKey\")}&steamids=${tempVars(\"searchUsername\")}",
+      "path": "$.response.players[0].personaname",
+      "storage": "1",
+      "varName": "profile.Name",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${tempVars(\"apiKey\")}&steamids=${tempVars(\"searchUsername\")}",
+      "path": "$.response.players[0].avatarfull",
+      "storage": "1",
+      "varName": "profile.Avatar",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "anchor_id": "[getCSGOStats]",
+      "color": "#0080c0",
+      "description": "[getCSGOStats]",
+      "name": "Create Anchor"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=${tempVars(\"apiKey\")}&steamid=${tempVars(\"searchUsername\")}",
+      "path": "$.playerstats.stats[0].value",
+      "storage": "1",
+      "varName": "stats.kills",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=${tempVars(\"apiKey\")}&steamid=${tempVars(\"searchUsername\")}",
+      "path": "$.playerstats.stats[1].value",
+      "storage": "1",
+      "varName": "stats.deaths",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=${tempVars(\"apiKey\")}&steamid=${tempVars(\"searchUsername\")}",
+      "path": "$.playerstats.stats[25].value",
+      "storage": "1",
+      "varName": "stats.headshots",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=${tempVars(\"apiKey\")}&steamid=${tempVars(\"searchUsername\")}",
+      "path": "$.playerstats.stats[42].value",
+      "storage": "1",
+      "varName": "stats.shots_hits",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=${tempVars(\"apiKey\")}&steamid=${tempVars(\"searchUsername\")}",
+      "path": "$.playerstats.stats[43].value",
+      "storage": "1",
+      "varName": "stats.shots_fired",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "comment": "-----",
+      "color": "#ffffff",
+      "name": "Comment"
+    },
+    {
+      "code": "// KDR\nlet input = tempVars(\"stats.kills\")/tempVars(\"stats.deaths\")\nlet output = input.toFixed(2);\nthis.storeValue(output, 1, 'stats.kdr', cache);\n",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "code": "// Accuracy Percentage\nlet input = tempVars(\"stats.shots_hits\")/tempVars(\"stats.shots_fired\")*100;\nlet output = input.toFixed(1);\nlet result = output +\"%\"\nthis.storeValue(result, 1, 'stats.accuracy.percentage', cache);\n",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "code": "// Headshots Percentage\nlet input = tempVars(\"stats.headshots\")/tempVars(\"stats.deaths\")*100;\nlet output = input.toFixed(1);\nlet result = output +\"%\"\nthis.storeValue(result, 1, 'stats.headshots.percentage', cache);\n",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "comment": "-----",
+      "color": "#ffffff",
+      "name": "Comment"
+    },
+    {
+      "anchor_id": "[sendMessage]",
+      "color": "#8080ff",
+      "description": "[sendMessage]",
+      "name": "Create Anchor"
+    },
+    {
+      "title": "",
+      "author": "${tempVars(\"profile.Name\")}",
+      "color": "${me.colorRole.hexColor}",
+      "url": "",
+      "authorIcon": "${tempVars(\"profile.Avatar\")}",
+      "authorUrl": "${tempVars(\"profile.URL\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg.result",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.result",
+      "fieldName": "Kills",
+      "message": "${tempVars(\"stats.kills\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.result",
+      "fieldName": "Deaths",
+      "message": "${tempVars(\"stats.deaths\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.result",
+      "fieldName": "K/D",
+      "message": "${tempVars(\"stats.kdr\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.result",
+      "fieldName": "Accuracy",
+      "message": "${tempVars(\"stats.accuracy.percentage\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.result",
+      "fieldName": "Headshots",
+      "message": "${tempVars(\"stats.headshots.percentage\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.result",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "msg.result",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "[ifSteamIDnotFound]",
+      "color": "#800000",
+      "description": "[ifSteamIDnotFound]",
+      "name": "Create Anchor"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "RED",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg.notfound",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.notfound",
+      "message": "${member} | Sorry, we cannot found the user!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.notfound",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "msg.notfound",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "",
+      "color": "#ff0000",
+      "name": "Comment"
+    }
+  ],
+  "_aliases": [
+    "csgostat"
+  ]
+}
