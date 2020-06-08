@@ -218,12 +218,76 @@
       "varName": "msg_result",
       "channel": "0",
       "varName2": "",
-      "storage3": "0",
-      "varName3": "",
+      "storage3": "1",
+      "varName3": "msg_result",
       "iffalse": "0",
       "iffalseVal": "",
       "messageContent": "",
       "name": "Send Embed Message"
+    },
+    {
+      "comment": "[deletePost] (Delete Post When Msg Author React ❌)",
+      "color": "#0080ff",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "emoji": "4",
+      "varName2": "❌",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "filter": "reaction.emoji.name === '❌' && user.id === '${msg.author.id}'",
+      "max": "1",
+      "time": "20000",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "description": "Jump To [ONTIMEOUT]",
+      "jump_to_anchor": "[ONTIMEOUT]",
+      "color": "#800040",
+      "name": "Jump to Anchor"
+    },
+    {
+      "comment": "[ONRESPOND]",
+      "color": "#80ff00",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "[ONTIMEOUT]",
+      "color": "#800040",
+      "description": "[ONTIMEOUT]",
+      "name": "Create Anchor"
+    },
+    {
+      "storage": "1",
+      "varName": "msg_result",
+      "name": "Clear reactions from message"
     },
     {
       "name": "End Action Sequence"

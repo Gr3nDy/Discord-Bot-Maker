@@ -28,9 +28,9 @@ Pretty much just a basic calculator command <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/better-calculator/README.md)
 
 # <h3> Avatar </h3>
-Gets a user or certain user profile picture 
+Gets a user or certain user profile picture <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/avatar/README.md)
 
 # <h3> MyAnimeList Anime & Manga Search </h3>
-Search Anime & Manga
+Search Anime & Manga <br>
 [[Install Raw Data]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/mal-anime-manga-search/README.md)
