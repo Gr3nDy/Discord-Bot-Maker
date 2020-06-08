@@ -1,14 +1,18 @@
-# Userinfo
+# CSGOSTATS
 
-This Command allows you to see a user's information
+Shows [Counter-Strike: Global Offensive](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/) stats
+
 
 **Usage:**
-* `[p]userinfo <user>`
+* `[p]csgostats <steamid>`
+
+# Features
+* Works With SteamID or Profile URL
 
 # Installation
 <b>Command</b>
 
-* [Userinfo](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/userinfo/userinfo.json)
+* [CSGOStats](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/csgostats/csgostats.json)
 
 Copy <b>Command</b> and import to
 DBM.
