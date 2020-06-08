@@ -22,6 +22,27 @@
       "name": "Comment"
     },
     {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Parameters"
+    },
+    {
+      "description": "Jump To [parameterNONE]",
+      "jump_to_anchor": "[parameterNONE]",
+      "color": "#8000ff",
+      "name": "Jump to Anchor"
+    },
+    {
+      "comment": "---",
+      "color": "#ffffff",
+      "name": "Comment"
+    },
+    {
       "info": "1",
       "infoIndex": "1",
       "storage": "1",
@@ -356,6 +377,55 @@
       "varName2": "",
       "storage3": "1",
       "varName3": "msg.notfound",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "[parameterNONE]",
+      "color": "#8000ff",
+      "description": "[parameterNONE]",
+      "name": "Create Anchor"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "RED",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "msg.parameterNONE",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.parameterNONE",
+      "message": "${member} | Please provide SteamID",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "msg.parameterNONE",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "msg.parameterNONE",
       "iffalse": "0",
       "iffalseVal": "",
       "messageContent": "",
