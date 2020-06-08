@@ -1,6 +1,7 @@
 # CSGOSTATS
 
 Shows [Counter-Strike: Global Offensive](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/) stats
+![GIF](https://raw.githubusercontent.com/Gr3nDy/Discord-Bot-Maker/master/Raw-Data/csgostats/Screenshot/csgostats.gif)
 
 
 **Usage:**
@@ -22,3 +23,5 @@ DBM.
 * 4.Paste <b>Command</b>
 * 5.Click on save
 
+# Note
+Goto https://steamcommunity.com/dev/apikey to get your **API KEY**
