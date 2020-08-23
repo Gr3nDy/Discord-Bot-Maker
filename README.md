@@ -12,4 +12,4 @@ Set the Notifictation to [Watching](https://help.github.com/en/github/receiving-
 ![Watching](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Resources/WATCHING.gif)
 
 # Donate
-https://ko-fi.com/grendy
+https://ko-fi.com/gr3ndy
