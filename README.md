@@ -4,6 +4,8 @@
 Here's the place for me to keep track on all of my [Discord Bot Maker](https://store.steampowered.com/app/682130/Discord_Bot_Maker/) projects
 
 # <h2> Raw Data </h2>
+[Warning] Some of the commands are from previous version of dbm and may not working on the latest update
+
 You can find the list of <b>Raw Data</b> that i've created <br> 
 [[Click Here]](https://github.com/Gr3nDy/Discord-Bot-Maker/blob/master/Raw-Data/README.md)
 
